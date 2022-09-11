@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4841E3A628CDDB0B0045097D /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841E3A528CDDB0B0045097D /* WebService.swift */; };
+		4841E3A828CDDC8C0045097D /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841E3A728CDDC8C0045097D /* MainResponse.swift */; };
+		4841E3AF28CDE3880045097D /* ImagesListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841E3AE28CDE3880045097D /* ImagesListVM.swift */; };
+		4841E3B228CDE7D50045097D /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841E3B128CDE7D50045097D /* String+Extensions.swift */; };
 		48A1527928CDA3EA00FA69D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1527828CDA3EA00FA69D4 /* AppDelegate.swift */; };
 		48A1527B28CDA3EA00FA69D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1527A28CDA3EA00FA69D4 /* SceneDelegate.swift */; };
 		48A1528028CDA3EA00FA69D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A1527E28CDA3EA00FA69D4 /* Main.storyboard */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4841E3A528CDDB0B0045097D /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		4841E3A728CDDC8C0045097D /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
+		4841E3AE28CDE3880045097D /* ImagesListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListVM.swift; sourceTree = "<group>"; };
+		4841E3B128CDE7D50045097D /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		48A1527528CDA3EA00FA69D4 /* Ke Nasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ke Nasa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A1527828CDA3EA00FA69D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A1527A28CDA3EA00FA69D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4841E3B028CDE7BF0045097D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4841E3B128CDE7D50045097D /* String+Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		48A1526C28CDA3E900FA69D4 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +76,7 @@
 		48A1527728CDA3EA00FA69D4 /* Ke Nasa */ = {
 			isa = PBXGroup;
 			children = (
+				4841E3B028CDE7BF0045097D /* Utils */,
 				48A1529028CDA44C00FA69D4 /* Network */,
 				48A1528F28CDA43B00FA69D4 /* ViewModel */,
 				48A1528E28CDA43400FA69D4 /* Model */,
@@ -95,6 +112,7 @@
 		48A1528E28CDA43400FA69D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4841E3A728CDDC8C0045097D /* MainResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +120,7 @@
 		48A1528F28CDA43B00FA69D4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4841E3AE28CDE3880045097D /* ImagesListVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -109,6 +128,7 @@
 		48A1529028CDA44C00FA69D4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				4841E3A528CDDB0B0045097D /* WebService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -192,7 +212,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4841E3A628CDDB0B0045097D /* WebService.swift in Sources */,
+				4841E3A828CDDC8C0045097D /* MainResponse.swift in Sources */,
+				4841E3AF28CDE3880045097D /* ImagesListVM.swift in Sources */,
 				48A152A728CDC73700FA69D4 /* NasaImagesVC.swift in Sources */,
+				4841E3B228CDE7D50045097D /* String+Extensions.swift in Sources */,
 				48A1527928CDA3EA00FA69D4 /* AppDelegate.swift in Sources */,
 				48A1529728CDAF8800FA69D4 /* NasaImageCell.swift in Sources */,
 				48A1527B28CDA3EA00FA69D4 /* SceneDelegate.swift in Sources */,
