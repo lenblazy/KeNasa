@@ -29,9 +29,12 @@ class NasaImageCell: UICollectionViewCell {
              .drive(self.labelSubTitle.rx.text)
              .disposed(by: disposeBag)
          //
+        
          vm.imageURL.subscribe { url in
              if let safeUrl = url.element {
-                 self.imageNasa.loadFrom(urlString: safeUrl)
+                 
+                     self.imageNasa.loadFrom(urlString: safeUrl)
+                 
              }
          }.disposed(by: disposeBag)
          //

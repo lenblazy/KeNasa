@@ -18,6 +18,4 @@ class StringExtensionsTest: XCTestCase {
         XCTAssertEqual("20 Dec, 2009", dateStringFromatted)
     }
     
-    
-    
 }
