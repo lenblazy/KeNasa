@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class NasaImageCell: UICollectionViewCell {
     
@@ -13,15 +15,27 @@ class NasaImageCell: UICollectionViewCell {
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelSubTitle: UILabel!
     
-    private func setUp(){
+    //
+    let disposeBag = DisposeBag()
+    //
+    
+     func setUp(with vm: ImageViewModel){
         //
-        //
+         vm.header.asDriver(onErrorJustReturn: "")
+             .drive(self.labelTitle.rx.text)
+             .disposed(by: disposeBag)
+         //
+         vm.subHeader.asDriver(onErrorJustReturn: "")
+             .drive(self.labelSubTitle.rx.text)
+             .disposed(by: disposeBag)
+         //
+         vm.imageURL.subscribe { url in
+             if let safeUrl = url.element {
+                 self.imageNasa.loadFrom(urlString: safeUrl)
+             }
+         }.disposed(by: disposeBag)
+         //
+
     }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-
+    
 }

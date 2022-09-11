@@ -26,7 +26,7 @@ struct Item: Decodable{
 //MARK: - Single data for given item
 struct ItemData: Decodable{
     let title: String
-    let photographer: String
+    let photographer: String?
     let date_created: String
     let description: String
 }
