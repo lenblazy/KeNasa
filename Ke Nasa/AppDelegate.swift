@@ -9,11 +9,19 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        //
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 0.08, green: 0.08, blue: 0.08, alpha: 1.00)]
+        navBarAppearance.titleTextAttributes = [
+            .foregroundColor: UIColor(red: 0.08, green: 0.08, blue: 0.08, alpha: 1.00)]
+        navBarAppearance.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 0.94)
+        //
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        //
         return true
     }
 
