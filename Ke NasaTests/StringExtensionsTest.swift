@@ -18,4 +18,10 @@ class StringExtensionsTest: XCTestCase {
         XCTAssertEqual("20 Dec, 2009", dateStringFromatted)
     }
     
+    func testFormatDateFromString_badDateString_returnSameString(){
+        let dateString = "2009-12-20"
+        let dateStringFromatted = dateString.formatDateFromString()
+        XCTAssertEqual("2009-12-20", dateStringFromatted)
+    }
+    
 }

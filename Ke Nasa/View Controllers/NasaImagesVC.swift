@@ -124,6 +124,7 @@ extension NasaImagesViewController: UICollectionViewDelegate, UICollectionViewDa
         let dest = segue.destination as? DetailViewController
         dest?.vm = selectedImage
     }
+  
     
 }
 
