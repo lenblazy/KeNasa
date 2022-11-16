@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4841E3A828CDDC8C0045097D /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841E3A728CDDC8C0045097D /* MainResponse.swift */; };
 		4841E3AF28CDE3880045097D /* ImagesListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841E3AE28CDE3880045097D /* ImagesListVM.swift */; };
-		4841E3B228CDE7D50045097D /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841E3B128CDE7D50045097D /* String+Extensions.swift */; };
 		48A1527928CDA3EA00FA69D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1527828CDA3EA00FA69D4 /* AppDelegate.swift */; };
 		48A1527B28CDA3EA00FA69D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1527A28CDA3EA00FA69D4 /* SceneDelegate.swift */; };
 		48A1528028CDA3EA00FA69D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A1527E28CDA3EA00FA69D4 /* Main.storyboard */; };
@@ -18,10 +17,8 @@
 		48A1529428CDA5F600FA69D4 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1529328CDA5F600FA69D4 /* DetailVC.swift */; };
 		48A1529728CDAF8800FA69D4 /* NasaImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1529628CDAF8800FA69D4 /* NasaImageCell.swift */; };
 		48A152A728CDC73700FA69D4 /* NasaImagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A152A628CDC73700FA69D4 /* NasaImagesVC.swift */; };
-		48C7D88028CE1F690044480A /* StringExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7D87F28CE1F690044480A /* StringExtensionsTest.swift */; };
-		48C7D88228CE20AB0044480A /* ImageListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7D88128CE20AB0044480A /* ImageListViewModelTest.swift */; };
-		48C7D88428CE22560044480A /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7D88328CE22560044480A /* UIImage+Extensions.swift */; };
-		48E3644A28CE334200FC9A55 /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3644928CE334200FC9A55 /* URLRequest+Extensions.swift */; };
+		48ECAE5D2924EBE800D9C36F /* AppUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECAE5C2924EBE800D9C36F /* AppUtilTests.swift */; };
+		48ECAE5F2924EC1400D9C36F /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECAE5E2924EC1400D9C36F /* AppUtil.swift */; };
 		70BDEFDCEDA7F985B1F1110D /* Pods_Ke_NasaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 641C82BBA18E24EEB12DE306 /* Pods_Ke_NasaTests.framework */; };
 		D703789F45CEDDD87DE6CD2E /* Pods_Ke_Nasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBEB5C53A024664786856105 /* Pods_Ke_Nasa.framework */; };
 /* End PBXBuildFile section */
@@ -39,7 +36,6 @@
 /* Begin PBXFileReference section */
 		4841E3A728CDDC8C0045097D /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		4841E3AE28CDE3880045097D /* ImagesListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListVM.swift; sourceTree = "<group>"; };
-		4841E3B128CDE7D50045097D /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		48A1527528CDA3EA00FA69D4 /* Ke Nasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ke Nasa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A1527828CDA3EA00FA69D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A1527A28CDA3EA00FA69D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,10 +47,8 @@
 		48A1529628CDAF8800FA69D4 /* NasaImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaImageCell.swift; sourceTree = "<group>"; };
 		48A152A628CDC73700FA69D4 /* NasaImagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaImagesVC.swift; sourceTree = "<group>"; };
 		48C7D83628CE01B20044480A /* Ke NasaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ke NasaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		48C7D87F28CE1F690044480A /* StringExtensionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTest.swift; sourceTree = "<group>"; };
-		48C7D88128CE20AB0044480A /* ImageListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewModelTest.swift; sourceTree = "<group>"; };
-		48C7D88328CE22560044480A /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		48E3644928CE334200FC9A55 /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
+		48ECAE5C2924EBE800D9C36F /* AppUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtilTests.swift; sourceTree = "<group>"; };
+		48ECAE5E2924EC1400D9C36F /* AppUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtil.swift; sourceTree = "<group>"; };
 		62B619E4390BAD800C233CA4 /* Pods-Ke Nasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ke Nasa.release.xcconfig"; path = "Target Support Files/Pods-Ke Nasa/Pods-Ke Nasa.release.xcconfig"; sourceTree = "<group>"; };
 		641C82BBA18E24EEB12DE306 /* Pods_Ke_NasaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ke_NasaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEB5C53A024664786856105 /* Pods_Ke_Nasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ke_Nasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,9 +80,7 @@
 		4841E3B028CDE7BF0045097D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4841E3B128CDE7D50045097D /* String+Extensions.swift */,
-				48C7D88328CE22560044480A /* UIImage+Extensions.swift */,
-				48E3644928CE334200FC9A55 /* URLRequest+Extensions.swift */,
+				48ECAE5E2924EC1400D9C36F /* AppUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -116,10 +108,11 @@
 		48A1527728CDA3EA00FA69D4 /* Ke Nasa */ = {
 			isa = PBXGroup;
 			children = (
+				48ECAE5B2924EA7000D9C36F /* WebService */,
 				4841E3B028CDE7BF0045097D /* Utils */,
 				48A1528F28CDA43B00FA69D4 /* ViewModel */,
 				48A1528E28CDA43400FA69D4 /* Model */,
-				48A1528D28CDA42100FA69D4 /* View Controllers */,
+				48A1528D28CDA42100FA69D4 /* Controllers */,
 				48A1528C28CDA41500FA69D4 /* Views */,
 				48A1527828CDA3EA00FA69D4 /* AppDelegate.swift */,
 				48A1527A28CDA3EA00FA69D4 /* SceneDelegate.swift */,
@@ -138,14 +131,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		48A1528D28CDA42100FA69D4 /* View Controllers */ = {
+		48A1528D28CDA42100FA69D4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				48A1529528CDAF4D00FA69D4 /* Cells */,
-				48A1529328CDA5F600FA69D4 /* DetailVC.swift */,
-				48A152A628CDC73700FA69D4 /* NasaImagesVC.swift */,
+				48ECAE5A2924EA1400D9C36F /* Detail */,
+				48ECAE592924EA0400D9C36F /* NasaImages */,
 			);
-			path = "View Controllers";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		48A1528E28CDA43400FA69D4 /* Model */ = {
@@ -175,10 +167,33 @@
 		48C7D83728CE01B20044480A /* Ke NasaTests */ = {
 			isa = PBXGroup;
 			children = (
-				48C7D87F28CE1F690044480A /* StringExtensionsTest.swift */,
-				48C7D88128CE20AB0044480A /* ImageListViewModelTest.swift */,
+				48ECAE5C2924EBE800D9C36F /* AppUtilTests.swift */,
 			);
 			path = "Ke NasaTests";
+			sourceTree = "<group>";
+		};
+		48ECAE592924EA0400D9C36F /* NasaImages */ = {
+			isa = PBXGroup;
+			children = (
+				48A1529528CDAF4D00FA69D4 /* Cells */,
+				48A152A628CDC73700FA69D4 /* NasaImagesVC.swift */,
+			);
+			path = NasaImages;
+			sourceTree = "<group>";
+		};
+		48ECAE5A2924EA1400D9C36F /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				48A1529328CDA5F600FA69D4 /* DetailVC.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		48ECAE5B2924EA7000D9C36F /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 		6297122A6D53D200618F5EAA /* Pods */ = {
@@ -256,6 +271,7 @@
 					};
 					48C7D83528CE01B20044480A = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 						TestTargetID = 48A1527428CDA3EA00FA69D4;
 					};
 				};
@@ -354,13 +370,11 @@
 				4841E3A828CDDC8C0045097D /* MainResponse.swift in Sources */,
 				4841E3AF28CDE3880045097D /* ImagesListVM.swift in Sources */,
 				48A152A728CDC73700FA69D4 /* NasaImagesVC.swift in Sources */,
-				4841E3B228CDE7D50045097D /* String+Extensions.swift in Sources */,
 				48A1527928CDA3EA00FA69D4 /* AppDelegate.swift in Sources */,
 				48A1529728CDAF8800FA69D4 /* NasaImageCell.swift in Sources */,
-				48C7D88428CE22560044480A /* UIImage+Extensions.swift in Sources */,
 				48A1527B28CDA3EA00FA69D4 /* SceneDelegate.swift in Sources */,
 				48A1529428CDA5F600FA69D4 /* DetailVC.swift in Sources */,
-				48E3644A28CE334200FC9A55 /* URLRequest+Extensions.swift in Sources */,
+				48ECAE5F2924EC1400D9C36F /* AppUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,8 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48C7D88228CE20AB0044480A /* ImageListViewModelTest.swift in Sources */,
-				48C7D88028CE1F690044480A /* StringExtensionsTest.swift in Sources */,
+				48ECAE5D2924EBE800D9C36F /* AppUtilTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,14 +595,21 @@
 			baseConfigurationReference = D5FA39C4FD286DB6109E2B27 /* Pods-Ke NasaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 683AUWT46Z;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lenibonje.Ke-NasaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ke Nasa.app/Ke Nasa";
@@ -601,10 +621,16 @@
 			baseConfigurationReference = DB07E4DF87AF072F7E85E56B /* Pods-Ke NasaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 683AUWT46Z;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lenibonje.Ke-NasaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
