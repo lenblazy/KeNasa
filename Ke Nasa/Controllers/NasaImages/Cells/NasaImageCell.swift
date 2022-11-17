@@ -13,4 +13,10 @@ class NasaImageCell: UICollectionViewCell {
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelSubTitle: UILabel!
     
+    func setUp(with vm: ImageViewModel){
+        print("header \(vm)")
+        labelTitle.text = vm.header
+        labelSubTitle.text = vm.subHeader
+    }
+    
 }

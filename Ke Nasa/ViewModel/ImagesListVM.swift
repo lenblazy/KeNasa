@@ -7,28 +7,41 @@
 
 import Foundation
 
+protocol ImageListUI {
+    func showLoader()
+    func hideLoader()
+    func showError(errorMsg: String)
+    func refreshList()
+}
+
 //MARK: - Represents the whole screen for images list
 class ImagesListViewModel {
     
     private var webService: WebService
-    private var imageViewModels = [ImageViewModel]()
+    var imageViewModels = [ImageViewModel]()
+    
+    var ui: ImageListUI?
     
     init(webservice: WebService) {
         self.webService = webservice
         populateData()
     }
     
-    private func populateData(){
-        //TODO: Show Loader
+    private func populateData() {
+        ui?.showLoader()
         self.webService.fetchNasaImages { [weak self] response, error in
-            //TODO: Dismiss Loader
-            if error != nil{
-                //TODO: Show error
-            } else {
-                self?.imageViewModels = response!.collection.items.map({ item in
-                    ImageViewModel(item: item)
-                })
+            DispatchQueue.main.async {
+                self?.ui?.hideLoader()
+                if error != nil{
+                    self?.ui?.showError(errorMsg: error?.localizedDescription ?? "An error occurred")
+                } else {
+                    self?.imageViewModels = response!.collection.items.map({ item in
+                        ImageViewModel(item: item)
+                    })
+                    self?.ui?.refreshList()
+                }
             }
+            
         }
     }
 }
@@ -45,21 +58,28 @@ struct ImageViewModel {
         self.data = item.data[0]
     }
     
-//    let photographer: String?
-//    let date_created: String
-//    let description: String
-//    let href: String
-    
-//    var data: ItemData {
-//        return item.data[0]
-//    }
-    
     var header: String {
         return data.title
     }
     
     var author: String {
         return data.photographer ?? ""
+    }
+    
+    var date: String {
+        return data.date_created
+    }
+    
+    var content: String {
+        return data.description
+    }
+    
+    var imgLink: String {
+        return item.links[0].href
+    }
+    
+    var subHeader: String {
+        return "\(author) | \(AppUtil().formatDateString(date))"
     }
     
 }
