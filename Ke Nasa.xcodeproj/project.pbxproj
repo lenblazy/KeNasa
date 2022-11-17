@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		483498642924F8050024D910 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483498632924F8050024D910 /* WebService.swift */; };
+		483498682924FBD40024D910 /* WebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483498672924FBD40024D910 /* WebServiceTests.swift */; };
+		4834986A2924FC3A0024D910 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483498692924FC3A0024D910 /* AppConstants.swift */; };
+		4834986E2924FCD70024D910 /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4834986D2924FCD70024D910 /* MockUrlProtocol.swift */; };
+		48349870292506B50024D910 /* MockWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4834986F292506B50024D910 /* MockWebService.swift */; };
+		4834987229250DF00024D910 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4834987129250DF00024D910 /* ApiError.swift */; };
+		48349875292518110024D910 /* ImagesListVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48349874292518110024D910 /* ImagesListVMTests.swift */; };
 		4841E3A828CDDC8C0045097D /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841E3A728CDDC8C0045097D /* MainResponse.swift */; };
 		4841E3AF28CDE3880045097D /* ImagesListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841E3AE28CDE3880045097D /* ImagesListVM.swift */; };
 		48A1527928CDA3EA00FA69D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1527828CDA3EA00FA69D4 /* AppDelegate.swift */; };
@@ -34,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		483498632924F8050024D910 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		483498672924FBD40024D910 /* WebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTests.swift; sourceTree = "<group>"; };
+		483498692924FC3A0024D910 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		4834986D2924FCD70024D910 /* MockUrlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlProtocol.swift; sourceTree = "<group>"; };
+		4834986F292506B50024D910 /* MockWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWebService.swift; sourceTree = "<group>"; };
+		4834987129250DF00024D910 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		48349874292518110024D910 /* ImagesListVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListVMTests.swift; sourceTree = "<group>"; };
 		4841E3A728CDDC8C0045097D /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		4841E3AE28CDE3880045097D /* ImagesListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListVM.swift; sourceTree = "<group>"; };
 		48A1527528CDA3EA00FA69D4 /* Ke Nasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ke Nasa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,10 +91,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4834986B2924FCA30024D910 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				483498672924FBD40024D910 /* WebServiceTests.swift */,
+				4834986D2924FCD70024D910 /* MockUrlProtocol.swift */,
+				4834986F292506B50024D910 /* MockWebService.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		4834986C2924FCB20024D910 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				48ECAE5C2924EBE800D9C36F /* AppUtilTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		48349873292517E10024D910 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				48349874292518110024D910 /* ImagesListVMTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4841E3B028CDE7BF0045097D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				48ECAE5E2924EC1400D9C36F /* AppUtil.swift */,
+				483498692924FC3A0024D910 /* AppConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -167,7 +208,9 @@
 		48C7D83728CE01B20044480A /* Ke NasaTests */ = {
 			isa = PBXGroup;
 			children = (
-				48ECAE5C2924EBE800D9C36F /* AppUtilTests.swift */,
+				48349873292517E10024D910 /* ViewModel */,
+				4834986C2924FCB20024D910 /* Utils */,
+				4834986B2924FCA30024D910 /* WebService */,
 			);
 			path = "Ke NasaTests";
 			sourceTree = "<group>";
@@ -192,6 +235,8 @@
 		48ECAE5B2924EA7000D9C36F /* WebService */ = {
 			isa = PBXGroup;
 			children = (
+				483498632924F8050024D910 /* WebService.swift */,
+				4834987129250DF00024D910 /* ApiError.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -367,6 +412,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4834987229250DF00024D910 /* ApiError.swift in Sources */,
+				483498642924F8050024D910 /* WebService.swift in Sources */,
 				4841E3A828CDDC8C0045097D /* MainResponse.swift in Sources */,
 				4841E3AF28CDE3880045097D /* ImagesListVM.swift in Sources */,
 				48A152A728CDC73700FA69D4 /* NasaImagesVC.swift in Sources */,
@@ -375,6 +422,7 @@
 				48A1527B28CDA3EA00FA69D4 /* SceneDelegate.swift in Sources */,
 				48A1529428CDA5F600FA69D4 /* DetailVC.swift in Sources */,
 				48ECAE5F2924EC1400D9C36F /* AppUtil.swift in Sources */,
+				4834986A2924FC3A0024D910 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +430,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48349870292506B50024D910 /* MockWebService.swift in Sources */,
+				4834986E2924FCD70024D910 /* MockUrlProtocol.swift in Sources */,
+				483498682924FBD40024D910 /* WebServiceTests.swift in Sources */,
 				48ECAE5D2924EBE800D9C36F /* AppUtilTests.swift in Sources */,
+				48349875292518110024D910 /* ImagesListVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

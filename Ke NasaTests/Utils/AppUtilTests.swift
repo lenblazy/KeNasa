@@ -22,13 +22,22 @@ class AppUtilTests: XCTestCase {
         sut = nil
     }
 
-    func testFormatDateTime_givenValidDateFormat_returnsProperDateFormatted(){
+    func testFormatDateTime_givenValidDateString_returnsProperDateFormatted(){
         //arrange
-        let format = "dd mm, yyyy"
+        let input = "2002-03-20T00:00:00Z"
+        let inputFormatted = "20 Mar, 2002"
         
         //act
+        let result = sut.formatDateString(input)
         
         //assert
+        XCTAssertEqual(result, inputFormatted, "formatDateString() did not return the proper date formatted")
+    }
+    
+    func testFormatDateTime_givenEmptyDateString_returnEmptyString(){
+        let result = sut.formatDateString("")
+        
+        XCTAssertEqual(result, "", "formatDateString() was supposed to return empty string")
     }
 
 }
