@@ -17,6 +17,7 @@ class NasaImagesViewController: UIViewController{
     //
     
     private var imagesListVM: ImagesListViewModel!
+    private var imageVM: ImageViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,13 @@ class NasaImagesViewController: UIViewController{
         collectionImages.dataSource = self
         //
         imagesListVM.ui = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == AppConstants.DETAILS_SEGUE {
+            let vc = segue.destination as! DetailViewController
+            vc.imageVM = self.imageVM
+        }
     }
     
 }
@@ -47,6 +55,11 @@ extension NasaImagesViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.setUp(with: vm)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        imageVM = self.imagesListVM.imageViewModels[indexPath.row]
+        self.performSegue(withIdentifier: AppConstants.DETAILS_SEGUE, sender: nil)
     }
     
 }

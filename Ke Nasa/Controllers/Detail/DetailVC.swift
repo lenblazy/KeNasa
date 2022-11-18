@@ -15,12 +15,20 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var imageHeadline: UIImageView!
     //
+    var imageVM: ImageViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //
         navigationController?.navigationBar.prefersLargeTitles = false
         //
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        labelContent.text = imageVM.content
+        labelTitle.text = imageVM.header
+        labelSubtitle.text = imageVM.subHeader
+        imageHeadline.loadFrom(urlString: imageVM.imgLink)
     }
     
 }
