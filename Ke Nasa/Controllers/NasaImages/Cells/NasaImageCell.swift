@@ -14,9 +14,9 @@ class NasaImageCell: UICollectionViewCell {
     @IBOutlet weak var labelSubTitle: UILabel!
     
     func setUp(with vm: ImageViewModel){
-        print("header \(vm)")
         labelTitle.text = vm.header
         labelSubTitle.text = vm.subHeader
+        imageNasa.loadFrom(urlString: vm.imgLink)
     }
     
 }
