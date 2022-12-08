@@ -10,33 +10,88 @@ import UIKit
 
 //MARK: - NasaImagesViewController
 class NasaImagesViewController: UIViewController{
-   
+    
     //
     @IBOutlet weak var loaderView: UIActivityIndicatorView!
     @IBOutlet weak var collectionImages: UICollectionView!
     //
     
-    private var imagesListVM: ImagesListViewModel!
-    private var imageVM: ImageViewModel!
+    private lazy var viewModel: ImagesListViewModel = {
+        let webService = WebService(urlString: AppConstants.urlString)
+        return ImagesListViewModel(webservice: webService)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        navigationController?.navigationBar.prefersLargeTitles = true
-        //
-        let webService = WebService(urlString: AppConstants.urlString)
-        imagesListVM = ImagesListViewModel(webservice: webService)
-        //
-        collectionImages.delegate = self
-        collectionImages.dataSource = self
-        //
-        imagesListVM.ui = self
+        initView()
+        initViewModel()
     }
     
+    private func initView(){
+        navigationController?.navigationBar.prefersLargeTitles = true
+        collectionImages.delegate = self
+        collectionImages.dataSource = self
+    }
+    
+    private func initViewModel(){
+        //Naive binding
+        viewModel.showAlertClosure = { [weak self] in
+            
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMessage {
+                    self?.showError(errorMsg: message)
+                }
+            }
+        }
+        
+        viewModel.updateLoadingStatus = { [weak self] in
+            DispatchQueue.main.async {
+                let isLoading = self?.viewModel.isLoading ?? false
+                if isLoading {
+                    self?.loaderView.startAnimating()
+                    
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self?.loaderView.alpha = 0.0
+                        self?.collectionImages.alpha = 0.0
+                        
+                    })
+                }else {
+                    self?.loaderView.stopAnimating()
+                    
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self?.collectionImages.alpha = 1.0
+                        self?.loaderView.alpha = 0.0
+                    })
+                }
+            }
+        }
+        
+        viewModel.reloadCollectionViewClosure = { [weak self] in
+            DispatchQueue.main.async {
+                self?.collectionImages.reloadData()
+            }
+        }
+        
+        viewModel.performSegue = { [weak self] in
+            self?.performSegue(withIdentifier: AppConstants.DETAILS_SEGUE, sender: nil)
+        }
+        
+        viewModel.populateData()
+    }
+    
+    private func showError(errorMsg: String) {
+        let alert = UIAlertController(title: "That didn't work", message: errorMsg, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Retry", style: .default)
+        alert.addAction(action)
+        self.present(alert, animated: true)
+    }
+    
+    //MARK: - Navigate
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == AppConstants.DETAILS_SEGUE {
             let vc = segue.destination as! DetailViewController
-            vc.imageVM = self.imageVM
+            vc.imageVM = viewModel.selectedArticle
         }
     }
     
@@ -45,47 +100,21 @@ class NasaImagesViewController: UIViewController{
 extension NasaImagesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.imagesListVM.imageViewModels.count
+        return viewModel.numberOfCells
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.CELL_NAME, for: indexPath) as! NasaImageCell
-        
-        let vm = self.imagesListVM.imageViewModels[indexPath.row]
-        cell.setUp(with: vm)
-        
+        cell.setUp(with: viewModel.getCellViewModel(at: indexPath))
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        imageVM = self.imagesListVM.imageViewModels[indexPath.row]
-        self.performSegue(withIdentifier: AppConstants.DETAILS_SEGUE, sender: nil)
+        viewModel.userPressed(at: indexPath)
     }
     
 }
 
-extension NasaImagesViewController: ImageListUI {
-    
-    func showLoader() {
-        self.loaderView.isHidden = false
-    }
-    
-    func hideLoader() {
-        self.loaderView.isHidden = true
-    }
-    
-    func showError(errorMsg: String) {
-        let alert = UIAlertController(title: "That didn't work", message: errorMsg, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Retry", style: .default)
-        alert.addAction(action)
-        self.present(alert, animated: true)
-    }
-    
-    func refreshList() {
-        self.collectionImages.reloadData()
-    }
-    
-}
 
 //MARK: - Collectionview layout methods
 extension NasaImagesViewController: UICollectionViewDelegateFlowLayout{

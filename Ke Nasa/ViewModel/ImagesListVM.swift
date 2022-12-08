@@ -7,43 +7,68 @@
 
 import Foundation
 
-protocol ImageListUI {
-    func showLoader()
-    func hideLoader()
-    func showError(errorMsg: String)
-    func refreshList()
-}
-
 //MARK: - Represents the whole screen for images list
 class ImagesListViewModel {
     
-    private var webService: WebService
-    var imageViewModels = [ImageViewModel]()
+    //closures controlling ui
+    var reloadCollectionViewClosure: (() -> Void)?
+    var updateLoadingStatus: (() -> Void)?
+    var showAlertClosure: (() -> Void)?
+    var performSegue: (() -> Void)?
     
-    var ui: ImageListUI?
+    private let webService: WebService
+    
+    var selectedArticle: ImageViewModel?
+    
+    var imageViewModels = [ImageViewModel]() {
+        didSet {
+            self.reloadCollectionViewClosure?()
+        }
+    }
+    
+    var isLoading: Bool = false {
+        didSet {
+            self.updateLoadingStatus?()
+        }
+    }
+    
+    var alertMessage: String? {
+        didSet {
+            self.showAlertClosure?()
+        }
+    }
+    
+    var numberOfCells: Int {
+        return imageViewModels.count
+    }
     
     init(webservice: WebService) {
         self.webService = webservice
-        populateData()
     }
     
-    private func populateData() {
-        ui?.showLoader()
+    func populateData() {
+        self.isLoading = true
         self.webService.fetchNasaImages { [weak self] response, error in
-            DispatchQueue.main.async {
-                self?.ui?.hideLoader()
-                if error != nil{
-                    self?.ui?.showError(errorMsg: error?.localizedDescription ?? "An error occurred")
-                } else {
-                    self?.imageViewModels = response!.collection.items.map({ item in
-                        ImageViewModel(item: item)
-                    })
-                    self?.ui?.refreshList()
-                }
+            guard let strongSelf = self else { return }
+            strongSelf.isLoading = false
+            if let error = error {
+                self?.alertMessage = error.localizedDescription
+            } else {
+                strongSelf.imageViewModels = response!.collection.items.map({ item in
+                        ImageViewModel(item: item)})
             }
-            
         }
     }
+    
+    func getCellViewModel(at indexPath: IndexPath ) -> ImageViewModel {
+        return imageViewModels[indexPath.row]
+    }
+    
+    func userPressed(at indexPath: IndexPath ){
+        self.selectedArticle = self.imageViewModels[indexPath.row]
+        self.performSegue?()
+    }
+    
 }
 
 
