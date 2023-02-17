@@ -21,6 +21,30 @@ class ImagesRepo: ImagesRepoProtocol {
         self.remoteDataSource = remoteDataSource
     }
     
+    func fetchNasaImages() {
+        fetchImagesFromCache()
+    }
+    
+    func fetchImagesFromCache() {
+        cacheDataSource.getImagesFromCache { [weak self] images in
+            guard let images = images, images.count > 0 else {
+                self?.fetchImagesFromDB()
+                return
+            }
+            self?.onFetchImages?(images, nil)
+        }
+    }
+    
+    func fetchImagesFromDB(){
+        localDataSource.getImagesFromDb { [weak self] images in
+            guard let images = images, images.count > 0 else {
+                self?.fetchImagesFromApi()
+                return
+            }
+            self?.onFetchImages?(images, nil)
+        }
+    }
+    
     func fetchImagesFromApi(){
         remoteDataSource.fetchNasaImages { [weak self] images, error in
             if let error = error {
@@ -31,19 +55,4 @@ class ImagesRepo: ImagesRepoProtocol {
             }
         }
     }
-    
-    func fetchNasaImages() {
-        fetchImagesFromCache()
-    }
-    
-    func fetchImagesFromCache() {
-        cacheDataSource.getImagesFromCache { [weak self] images in
-            guard let images = images, images.count > 0 else {
-                self?.fetchImagesFromApi()
-                return
-            }
-            self?.onFetchImages?(images, nil)
-        }
-    }
-    
 }

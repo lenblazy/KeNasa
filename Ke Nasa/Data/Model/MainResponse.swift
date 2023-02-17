@@ -25,10 +25,10 @@ struct Item: Decodable{
 
 //MARK: - Single data for given item
 struct ItemData: Decodable{
-    let title: String
-    let photographer: String?
-    let date_created: String
-    let description: String
+    var title: String
+    var photographer: String?
+    var date_created: String
+    var description: String
 }
 
 //MARK: - Single link of the given item

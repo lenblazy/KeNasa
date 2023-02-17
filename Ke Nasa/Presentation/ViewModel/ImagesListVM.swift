@@ -50,7 +50,6 @@ class ImagesListViewModel {
     
     
     func populateData() {
-        self.repository.fetchNasaImages()
         self.isLoading = true
         self.repository.onFetchImages = { [weak self] items, error in
             guard let strongSelf = self else { return }
@@ -62,6 +61,8 @@ class ImagesListViewModel {
                     ImageViewModel(item: item)})
             }
         }
+        self.repository.fetchNasaImages()
+        
         
     }
     
