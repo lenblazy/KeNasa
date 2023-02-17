@@ -27,6 +27,7 @@ class ImagesRepo: ImagesRepoProtocol {
                 self?.onFetchImages?(nil, error)
             } else {
                 self?.onFetchImages?(images, nil)
+                self?.localDataSource.saveImagesToDb(list: images!)
             }
         }
     }

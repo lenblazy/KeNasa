@@ -11,4 +11,6 @@ protocol LocalDataSource{
     
     func getImagesFromDb(completion: @escaping ([Item]?) -> Void)
     
+    func saveImagesToDb(list: [Item])
+    
 }

@@ -36,6 +36,13 @@
 		B8DD0745299FB26900CA2A33 /* LocalDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD0744299FB26900CA2A33 /* LocalDataSourceImpl.swift */; };
 		B8DD0747299FB40D00CA2A33 /* CacheDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD0746299FB40D00CA2A33 /* CacheDataSource.swift */; };
 		B8DD0749299FB5D000CA2A33 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD0748299FB5D000CA2A33 /* LocalDataSource.swift */; };
+		B8DD074C299FC9E400CA2A33 /* NasaImagesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8DD074A299FC9E400CA2A33 /* NasaImagesData.xcdatamodeld */; };
+		B8DD0777299FD4E200CA2A33 /* DbItemData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD0771299FD4E200CA2A33 /* DbItemData+CoreDataClass.swift */; };
+		B8DD0778299FD4E200CA2A33 /* DbItemData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD0772299FD4E200CA2A33 /* DbItemData+CoreDataProperties.swift */; };
+		B8DD0779299FD4E200CA2A33 /* DbItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD0773299FD4E200CA2A33 /* DbItem+CoreDataClass.swift */; };
+		B8DD077A299FD4E200CA2A33 /* DbItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD0774299FD4E200CA2A33 /* DbItem+CoreDataProperties.swift */; };
+		B8DD077B299FD4E200CA2A33 /* DbLink+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD0775299FD4E200CA2A33 /* DbLink+CoreDataClass.swift */; };
+		B8DD077C299FD4E200CA2A33 /* DbLink+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD0776299FD4E200CA2A33 /* DbLink+CoreDataProperties.swift */; };
 		D703789F45CEDDD87DE6CD2E /* Pods_Ke_Nasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBEB5C53A024664786856105 /* Pods_Ke_Nasa.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +90,13 @@
 		B8DD0744299FB26900CA2A33 /* LocalDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSourceImpl.swift; sourceTree = "<group>"; };
 		B8DD0746299FB40D00CA2A33 /* CacheDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheDataSource.swift; sourceTree = "<group>"; };
 		B8DD0748299FB5D000CA2A33 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		B8DD074B299FC9E400CA2A33 /* NasaImagesData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NasaImagesData.xcdatamodel; sourceTree = "<group>"; };
+		B8DD0771299FD4E200CA2A33 /* DbItemData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DbItemData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		B8DD0772299FD4E200CA2A33 /* DbItemData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DbItemData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		B8DD0773299FD4E200CA2A33 /* DbItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DbItem+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		B8DD0774299FD4E200CA2A33 /* DbItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DbItem+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		B8DD0775299FD4E200CA2A33 /* DbLink+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DbLink+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		B8DD0776299FD4E200CA2A33 /* DbLink+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DbLink+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BBEB5C53A024664786856105 /* Pods_Ke_Nasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ke_Nasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5FA39C4FD286DB6109E2B27 /* Pods-Ke NasaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ke NasaTests.debug.xcconfig"; path = "Target Support Files/Pods-Ke NasaTests/Pods-Ke NasaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB07E4DF87AF072F7E85E56B /* Pods-Ke NasaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ke NasaTests.release.xcconfig"; path = "Target Support Files/Pods-Ke NasaTests/Pods-Ke NasaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -313,6 +327,13 @@
 		B8DD0733299FA6BD00CA2A33 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				B8DD0771299FD4E200CA2A33 /* DbItemData+CoreDataClass.swift */,
+				B8DD0772299FD4E200CA2A33 /* DbItemData+CoreDataProperties.swift */,
+				B8DD0773299FD4E200CA2A33 /* DbItem+CoreDataClass.swift */,
+				B8DD0774299FD4E200CA2A33 /* DbItem+CoreDataProperties.swift */,
+				B8DD0775299FD4E200CA2A33 /* DbLink+CoreDataClass.swift */,
+				B8DD0776299FD4E200CA2A33 /* DbLink+CoreDataProperties.swift */,
+				B8DD074A299FC9E400CA2A33 /* NasaImagesData.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -513,16 +534,22 @@
 			files = (
 				4834987229250DF00024D910 /* ApiError.swift in Sources */,
 				B8DD073E299FB11500CA2A33 /* RemoteDataSource.swift in Sources */,
+				B8DD077A299FD4E200CA2A33 /* DbItem+CoreDataProperties.swift in Sources */,
 				483498642924F8050024D910 /* WebService.swift in Sources */,
 				4841E3A828CDDC8C0045097D /* MainResponse.swift in Sources */,
+				B8DD077B299FD4E200CA2A33 /* DbLink+CoreDataClass.swift in Sources */,
 				B8DD0743299FB23200CA2A33 /* CacheDataSourceImpl.swift in Sources */,
 				4841E3AF28CDE3880045097D /* ImagesListVM.swift in Sources */,
+				B8DD0779299FD4E200CA2A33 /* DbItem+CoreDataClass.swift in Sources */,
+				B8DD0777299FD4E200CA2A33 /* DbItemData+CoreDataClass.swift in Sources */,
 				B8DD0745299FB26900CA2A33 /* LocalDataSourceImpl.swift in Sources */,
 				B8DD073A299FA91100CA2A33 /* ImagesRepoProtocol.swift in Sources */,
 				B8DD073C299FAFA400CA2A33 /* ImagesRepo.swift in Sources */,
 				48A152A728CDC73700FA69D4 /* NasaImagesVC.swift in Sources */,
+				B8DD077C299FD4E200CA2A33 /* DbLink+CoreDataProperties.swift in Sources */,
 				B8DD0749299FB5D000CA2A33 /* LocalDataSource.swift in Sources */,
 				B8DD0741299FB21C00CA2A33 /* RemoteDataSourceImpl.swift in Sources */,
+				B8DD074C299FC9E400CA2A33 /* NasaImagesData.xcdatamodeld in Sources */,
 				48A1527928CDA3EA00FA69D4 /* AppDelegate.swift in Sources */,
 				4895BAE5292785D600A23218 /* UIImageView+Extensions.swift in Sources */,
 				48A1529728CDAF8800FA69D4 /* NasaImageCell.swift in Sources */,
@@ -530,6 +557,7 @@
 				48A1529428CDA5F600FA69D4 /* DetailVC.swift in Sources */,
 				48ECAE5F2924EC1400D9C36F /* AppUtil.swift in Sources */,
 				4834986A2924FC3A0024D910 /* AppConstants.swift in Sources */,
+				B8DD0778299FD4E200CA2A33 /* DbItemData+CoreDataProperties.swift in Sources */,
 				B8DD0747299FB40D00CA2A33 /* CacheDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -832,6 +860,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B8DD074A299FC9E400CA2A33 /* NasaImagesData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B8DD074B299FC9E400CA2A33 /* NasaImagesData.xcdatamodel */,
+			);
+			currentVersion = B8DD074B299FC9E400CA2A33 /* NasaImagesData.xcdatamodel */;
+			path = NasaImagesData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 48A1526D28CDA3E900FA69D4 /* Project object */;
 }

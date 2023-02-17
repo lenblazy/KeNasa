@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DbItem" representedClassName=".DbItem" syncable="YES">
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DbItemData" inverseName="itemParent" inverseEntity="DbItemData"/>
+        <relationship name="links" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DbLink" inverseName="linkParent" inverseEntity="DbLink"/>
+    </entity>
+    <entity name="DbItemData" representedClassName=".DbItemData" syncable="YES">
+        <attribute name="db_date_created" attributeType="String"/>
+        <attribute name="db_description" optional="YES" attributeType="String"/>
+        <attribute name="db_photographer" optional="YES" attributeType="String"/>
+        <attribute name="db_title" attributeType="String"/>
+        <relationship name="itemParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DbItem" inverseName="items" inverseEntity="DbItem"/>
+    </entity>
+    <entity name="DbLink" representedClassName=".DbLink" syncable="YES">
+        <attribute name="db_href" optional="YES" attributeType="String"/>
+        <relationship name="linkParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DbItem" inverseName="links" inverseEntity="DbItem"/>
+    </entity>
+</model>
