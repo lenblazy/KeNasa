@@ -16,7 +16,12 @@ class ImagesListViewModel {
     var showAlertClosure: (() -> Void)?
     var performSegue: (() -> Void)?
     
-    private let webService: WebService
+    private var repository: ImagesRepoProtocol
+    
+    init(repository: ImagesRepoProtocol) {
+        self.repository = repository
+        self.repository.fetchNasaImages()
+    }
     
     var selectedArticle: ImageViewModel?
     
@@ -42,22 +47,22 @@ class ImagesListViewModel {
         return imageViewModels.count
     }
     
-    init(webservice: WebService) {
-        self.webService = webservice
-    }
+    
     
     func populateData() {
+        self.repository.fetchNasaImages()
         self.isLoading = true
-        self.webService.fetchNasaImages { [weak self] response, error in
+        self.repository.onFetchImages = { [weak self] items, error in
             guard let strongSelf = self else { return }
             strongSelf.isLoading = false
             if let error = error {
-                self?.alertMessage = error.localizedDescription
+                self?.alertMessage = error
             } else {
-                strongSelf.imageViewModels = response!.collection.items.map({ item in
-                        ImageViewModel(item: item)})
+                strongSelf.imageViewModels = items!.map({ item in
+                    ImageViewModel(item: item)})
             }
         }
+        
     }
     
     func getCellViewModel(at indexPath: IndexPath ) -> ImageViewModel {

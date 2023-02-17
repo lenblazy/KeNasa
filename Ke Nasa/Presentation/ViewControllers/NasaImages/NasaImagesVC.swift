@@ -16,9 +16,12 @@ class NasaImagesViewController: UIViewController{
     @IBOutlet weak var collectionImages: UICollectionView!
     //
     
+    private lazy var repository: ImagesRepoProtocol = {
+        return ImagesRepo(cacheDataSource: CacheDataSourceImpl(), localDataSource: LocalDataSourceImpl(), remoteDataSource: RemoteDataSourceImpl(webservice: WebService(urlString: AppConstants.urlString)))
+    }()
+    
     private lazy var viewModel: ImagesListViewModel = {
-        let webService = WebService(urlString: AppConstants.urlString)
-        return ImagesListViewModel(webservice: webService)
+        return ImagesListViewModel(repository: repository)
     }()
     
     override func viewDidLoad() {
